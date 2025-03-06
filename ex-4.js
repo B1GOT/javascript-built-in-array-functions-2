@@ -375,8 +375,25 @@ const bills = [
 
 // Start coding here
 
-const totalMembers = function(unique) {
-  return [...new Set(unique.filter(n => n.member !== null ).map(num => num.member.name))].length
-};
+// const totalMembers = function(unique) {
+//   return [...new Set(unique.filter(n => n.member !== null ).map(num => num.member.name))].length
+// };
 
-console.log(`Unique Members Count: ${totalMembers(bills)}`)
+// console.log(`Unique Members Count: ${totalMembers(bills)}`)
+
+const totalMembers = bills
+  .filter(function (bill) {
+    return bill.member !== null;
+  })
+  .map(function (bill) {
+    return bill.member.name;
+  })
+  .reduce(function (acc,cur) {
+    if (!acc.includes(cur)) {
+      acc.push(cur);
+    }
+    return acc;
+  }, [])
+
+
+console.log(totalMembers)
