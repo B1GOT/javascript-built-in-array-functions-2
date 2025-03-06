@@ -375,4 +375,8 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills = function (array) {
+  return array.filter(i => i.member !== null)
+}
+
+console.log(newBills(bills))

@@ -374,4 +374,44 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+
+const ABC = [
+  {
+    id: "34",
+    transactionDate: "2021-08-06",
+    total: 37786,
+    location: "Bangkok",
+    paymentType: "Cash",
+    member: null,
+  },
+  {
+    id: "35",
+    transactionDate: "2021-08-10",
+    total: 120286,
+    location: "Bangkok",
+    paymentType: "VISA",
+    member: {
+      name: "Bee",
+      age: 31,
+    },
+    pointRate: 0.02,
+  },
+  {
+    id: "36",
+    transactionDate: "2021-08-25",
+    total: 74321,
+    location: "Nakhon Sawan",
+    paymentType: "QR",
+    member: {
+      name: "Mark",
+      age: 26,
+    },
+    pointRate: 0.01,
+  }
+]
+
+const billMembers = function(name) {
+  return name.filter(n => n.member !== null).map(num => num.member.name)
+};
+
+console.log(billMembers(ABC))

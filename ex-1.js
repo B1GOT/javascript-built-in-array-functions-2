@@ -374,3 +374,9 @@ const bills = [
 ];
 
 // Start coding here
+
+function sumTramsaction (numbers) {
+  return `Total bill transaction is ${numbers.reduce((a,b) => a + b.total,0)}`
+}
+
+console.log(sumTramsaction(bills))

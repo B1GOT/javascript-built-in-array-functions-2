@@ -374,4 +374,51 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+const neww = [
+  {
+    id: "1",
+    transactionDate: "2021-08-01",
+    total: 20000,
+    location: "Chonburi",
+    paymentType: "Cash",
+    member: {
+      name: "Mark",
+      age: "26",
+    },
+    pointRate: 0.01,
+  },
+  {
+    id: "2",
+    transactionDate: "2021-08-01",
+    total: 12298,
+    location: "Chonburi",
+    paymentType: "Cash",
+    member: {
+      name: "Mark",
+      age: "26",
+    },
+    pointRate: 0.01,
+  },
+  {
+    id: "3",
+    transactionDate: "2021-08-01",
+    total: 41012,
+    location: "Suphanburi",
+    paymentType: "Mastercard",
+    member: {
+      name: "Peter",
+      age: 33,
+    },
+    pointRate: 0.01,
+  }
+]
+
+// 1. นับจำนวนสมาชิกทั้งหมด .length
+// 2. ไม่นับชื่อที่ซ้ำกัน filter
+
+const totalMembers = function(unique) {
+  return [...new Set(unique.filter(n => n.member !== null ).map(num => num.member.name))].length
+};
+
+console.log(`Unique Members Count: ${totalMembers(bills)}`)
